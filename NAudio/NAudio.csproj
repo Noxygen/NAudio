@@ -457,6 +457,8 @@
     <Compile Include="Wave\SampleProviders\MonoToStereoSampleProvider.cs" />
     <Compile Include="Wave\WaveProviders\MediaFoundationResampler.cs" />
     <Compile Include="MediaFoundation\MediaFoundationTransform.cs" />
+    <Compile Include="Wave\SampleProviders\MemorySampleProvider.cs" />
+    <Compile Include="Wave\WaveProviders\MemoryWaveProvider.cs" />
     <Compile Include="Wave\WaveProviders\MixingWaveProvider32.cs" />
     <Compile Include="Wave\WaveProviders\MultiplexingWaveProvider.cs" />
     <Compile Include="Wave\WaveProviders\SilenceWaveProvider.cs" />
