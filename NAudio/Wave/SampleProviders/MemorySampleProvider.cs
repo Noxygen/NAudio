@@ -1,10 +1,11 @@
 ﻿using System;
 
+// ReSharper disable UnusedMember.Global
 // ReSharper disable once CheckNamespace
 namespace NAudio.Wave
 {
     /// <summary>
-    /// A read-only <see cref="ISampleProvider"/> whose backing store is memory.
+    /// A read-only, random-access <see cref="ISampleProvider"/> whose backing store is memory.
     /// </summary>
     public class MemorySampleProvider : ISampleProvider
     {
@@ -28,7 +29,7 @@ namespace NAudio.Wave
         /// </summary>
         public int Position
         {
-            get => position;
+            get { lock (sourceLock) return position; }
             set { lock (sourceLock) position = value; }
         }
 
