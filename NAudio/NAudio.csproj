@@ -181,6 +181,7 @@
     <Compile Include="Wave\SampleProviders\AdsrSampleProvider.cs" />
     <Compile Include="Wave\SampleProviders\ConcatenatingSampleProvider.cs" />
     <Compile Include="Wave\SampleProviders\FadeInOutSampleProvider.cs" />
+    <Compile Include="Wave\SampleProviders\LoopSampleProvider.cs" />
     <Compile Include="Wave\SampleProviders\MultiplexingSampleProvider.cs" />
     <Compile Include="Wave\SampleProviders\OffsetSampleProvider.cs" />
     <Compile Include="Wave\SampleProviders\Pcm32BitToSampleProvider.cs" />
@@ -455,6 +456,7 @@
     <Compile Include="Wave\SampleProviders\SampleToWaveProvider.cs" />
     <Compile Include="Wave\WaveProviders\BufferedWaveProvider.cs" />
     <Compile Include="Wave\SampleProviders\MonoToStereoSampleProvider.cs" />
+    <Compile Include="Wave\WaveProviders\LoopWaveProvider.cs" />
     <Compile Include="Wave\WaveProviders\MediaFoundationResampler.cs" />
     <Compile Include="MediaFoundation\MediaFoundationTransform.cs" />
     <Compile Include="Wave\SampleProviders\MemorySampleProvider.cs" />
