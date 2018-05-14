@@ -82,8 +82,8 @@ namespace NAudio.Wave
         /// Initializes a new instance of the <see cref="LoopWaveProvider"/> class based on the given source and loop dimensions.
         /// </summary>
         /// <param name="source">The wave source for this instance.</param>
-        /// <param name="loopStart">Position of the first wave in the loop.</param>
-        /// <param name="loopEnd">Position of the last wave in the loop.</param>
+        /// <param name="loopStart">Position of the first byte in the loop.</param>
+        /// <param name="loopEnd">Position of the last byte in the loop.</param>
         /// <param name="catchUp">
         /// Specifies whether this provider will start at the beginning of the source and run into the loop.
         /// Setting this to false causes the playback to start at <see cref="LoopStart"/>.
@@ -117,7 +117,9 @@ namespace NAudio.Wave
                 if (!EnableLooping) return Source.Read(buffer, offset, count);
 
                 // Validate loop parameters
-                if (LoopEnd >= Source.Length ||
+                if (LoopEnd <= 0 ||
+                    LoopEnd >= Source.Length ||
+                    LoopStart < 0 ||
                     LoopStart >= Source.Length ||
                     LoopEnd <= LoopStart) throw new ArgumentException("Invalid loop parameters.");
 

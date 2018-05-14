@@ -116,7 +116,9 @@ namespace NAudio.Wave
                 if (!EnableLooping) return Source.Read(buffer, offset, count);
 
                 // Validate loop parameters
-                if (LoopEnd >= Source.Length || 
+                if (LoopEnd <= 0 || 
+                    LoopEnd >= Source.Length || 
+                    LoopStart < 0 ||
                     LoopStart >= Source.Length || 
                     LoopEnd <= LoopStart) throw new ArgumentException("Invalid loop parameters.");
 
